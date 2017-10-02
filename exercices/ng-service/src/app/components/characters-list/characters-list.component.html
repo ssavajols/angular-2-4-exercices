@@ -1,0 +1,23 @@
+<md-toolbar color="secondary">
+  <span>Star Wars Characters</span>
+</md-toolbar>
+
+<md-list>
+  <md-list-item *ngFor="let character of characters">
+    <h3 md-line>{{character.name}}</h3>  
+    <p md-line>Height: {{character.height}}</p>  
+    <p md-line>Weight: {{character.mass}}</p>  
+    <p md-line>Hair Color: {{character.hair_color}}</p>  
+
+    <p md-line ngSwitch="{{character.eye_color}}">Eye Color: 
+      <span *ngSwitchCase="'blue'" [style.color]="'blue'">{{character.eye_color}}</span>
+      <span *ngSwitchCase="'red'" [style.color]="'red'">{{character.eye_color}}</span>
+      <span *ngSwitchCase="'yellow'" [style.color]="'yellow'" [style.background]="'black'">{{character.eye_color}}</span>
+      <span *ngSwitchDefault>Unknown</span>
+    </p>  
+
+    <p md-line>Skin Color: {{character.skin_color}}</p>  
+    <p md-line>Birth Date: {{character.birth_year}}</p>  
+    <p md-line>Gender: {{character.gender}}</p>  
+  </md-list-item>
+</md-list>

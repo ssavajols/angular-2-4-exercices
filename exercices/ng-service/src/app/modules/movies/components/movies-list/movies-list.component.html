@@ -1,0 +1,15 @@
+<md-toolbar color="secondary">
+    <span>Star Wars Movies</span>
+  </md-toolbar>
+  
+  <md-list>
+    <md-list-item  *ngFor="let movie of movies">
+      <h3 md-line>Episode {{movie.episode_id}} - {{movie.title}}</h3>  
+      <p md-line>Release Date: {{movie.release_date | date:'fullDate' | uppercase}}</p>  
+      <p md-line>Director: {{movie.director}}</p>  
+      <p md-line>Producer: {{movie.producer}}</p>  
+      <p md-line>Opening Crawl:</p>
+      <p md-line class="crawl">{{movie.opening_crawl}}</p>
+
+    </md-list-item>
+  </md-list>
